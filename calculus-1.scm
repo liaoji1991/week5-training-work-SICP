@@ -115,9 +115,9 @@ product
 (define (derivative var wrt)
 (cond 
 ((number? wrt ) '0) 
-((symbol? wrt) (deriv-variable var wrt))
 ((list? var) (cond ((eqv? (list-ref var 0) '+) (deriv-sum var wrt))
                    ((eqv? (list-ref var 0) '*) (deriv-product var wrt))))
+((symbol? wrt) (deriv-variable var wrt))
 (else (list "Don't know how to differentiate" 'var))))
 
 
